@@ -1,0 +1,15 @@
+{
+  "data":[
+    { "key": "tashkent", "name":"Ташкент" },
+
+    {
+      "key": "bukhara",
+      "name": "Бухара"
+    },
+
+    {
+      "key": "samarkand",
+      "name": "Самарканд"
+    }
+  ]
+}

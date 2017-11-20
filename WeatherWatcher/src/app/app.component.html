@@ -1,0 +1,48 @@
+<div id="loadFacebookGWrap" *ngIf="show">
+  <div id="loadFacebookG">
+    <div id="blockG_1" class="facebook_blockG"></div>
+    <div id="blockG_2" class="facebook_blockG"></div>
+    <div id="blockG_3" class="facebook_blockG"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="logo">
+    <img src="Content/img/logo.png">
+  </div>
+  <h1 class="mt-2">{{title}}</h1>
+  <div class="col-12">
+    <div class="col-4 float-left">
+      <h2 class="mb-4 mt-5">{{choosecity}}</h2>
+      <select name="cities" class="form-control" [(ngModel)]="city" (ngModelChange)="cityChoosed($event)" >
+        <option [ngValue]="null">Город не выбран</option>
+        <option *ngFor="let city of cities" [ngValue]="city.key">{{city.name}}</option>
+      </select>
+    </div>
+    <div class="col-8 float-left mt-5" *ngIf="weather != undefined">
+      <div class="col-12 border-bottom pl-0 float-left">
+        <p class="col-2 pl-0 pr-0 float-left text-left"><b>{{weather?.item.condition.date}}</b></p>
+        <p class="col-1 pl-0 pr-0 float-left text-left">{{weather?.item.condition.temp | fahrenheihtToCelsius}}&#8451;</p>
+        <p class="col-4 pl-0 pr-0 float-left text-left">{{weather?.item.condition.text | translateWeatherType}}</p>
+      </div>
+      <div class="col-12 border-bottom pl-0 float-left mt-3">
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">Восход:</b>{{weather?.astronomy.sunrise}}</p>
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">Закат:</b>{{weather?.astronomy.sunset}}</p>
+      </div>
+      <div class="col-12 border-bottom pl-0 float-left mt-3">
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">Влажность:</b>{{weather?.atmosphere.humidity}}%</p>
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">Видимость:</b>{{weather?.atmosphere.visibility}} км</p>
+        <p class="col-5 pl-0 pr-0 float-left text-left"><b class="mr-2">Давление:</b>{{weather?.atmosphere.pressure}} мм.рт.ст.</p>
+      </div>
+      <div class="col-12 border-bottom pl-0 float-left mt-3">
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">Ветер:</b>{{weather?.wind.direction}}</p>
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">Скорость:</b>{{weather?.wind.speed}} км.сек.</p>
+      </div>
+      <div class="col-12 border-bottom pl-0 float-left mt-3" *ngFor="let item of weather.item.forecast">
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">{{item.date | date:'dd-MM-yyyy'}}</b></p>
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">{{item.text | translateWeatherType}}</b></p>
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">Днем:</b>{{item.high | fahrenheihtToCelsius}}&nbsp;&#8451;</p>
+        <p class="col-3 pl-0 pr-0 float-left text-left"><b class="mr-2">Ночью:</b>{{item.low | fahrenheihtToCelsius}}&nbsp;&#8451;</p>
+      </div>        
+    </div>
+  </div>
+</div>
