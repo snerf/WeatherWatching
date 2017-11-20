@@ -9,10 +9,10 @@ export class UtilsMethods
 
     twelveHoursToTwentyFourHoursString(time: string) {
         if (time.indexOf(':') == -1) return time;
-
-        let am: boolean = time.toLocaleLowerCase().indexOf('am') > -1,
-            pm: boolean = time.toLocaleLowerCase().indexOf('pm') > -1,
-            result: string = time.replace(/(am|pm)/, '');
+        lat timelwr = time.toLocaleLowerCase();
+        let am: boolean = timelwr.indexOf('am') > -1,
+            pm: boolean = timelwr.indexOf('pm') > -1,
+            result: string = timelwr.replace(/(am|pm)/, '');
 
         if (!am && pm) {
             let spltd = result.split(':');
