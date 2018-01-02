@@ -1,10 +1,18 @@
 {
   "data":[
-    { "key": "tashkent", "name":"Ташкент" },
-    { "key": "bukhara", "name": "Бухара" },
-    { "key": "samarkand", "name": "Самарканд" },
     { "key": "nukus", "name": "Нукус" },
-    { "key": "khiva", "name": "Хива" },
-    { "key": "navoi", "name": "Навои" }
+    { "key": "andijan", "name": "Андижан" },
+    { "key": "bukhara", "name": "Бухара" },
+    { "key": "djizak", "name": "Джиззак" },
+    { "key": "karshi", "name": "Карши" },
+    { "key": "navoi", "name": "Навои" },
+    { "key": "namangan", "name": "Наманган" },
+    { "key": "samarkand", "name": "Самарканд" },
+    { "key": "termez", "name": "Термез" },
+    { "key": "sirdaryo", "name": "Сырдарья" },
+    { "key": "tashkent", "name":"Ташкент" },
+    { "key": "chirchik", "name": "Чирчик" },
+    { "key": "fergana", "name":"Фераган" },
+    { "key": "khiva", "name": "Хива" }
   ]
 }
