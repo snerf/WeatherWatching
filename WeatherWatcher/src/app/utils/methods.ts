@@ -1,18 +1,18 @@
 export class UtilsMethods
 {
     yahooCurrentDateToCommonDate(date: string) {
-        let datetlwr = date.toLocaleLowerCase();
-        let index = datetlwr.indexOf('pm') > -1 ? datetlwr.indexOf('pm') : (datetlwr.indexOf('am') > -1 ? datetlwr.indexOf('am') : 0);
+        let dateLwr = date.toLocaleLowerCase();
+        let index = dateLwr.indexOf('pm') > -1 ? dateLwr.indexOf('pm') : (dateLwr.indexOf('am') > -1 ? dateLwr.indexOf('am') : 0);
         if (index == 0) return '';
         return new Date(date.substr(0, index)).toLocaleDateString('ru-RU');
     }
 
     twelveHoursToTwentyFourHoursString(time: string) {
         if (time.indexOf(':') == -1) return time;
-        lat timelwr = time.toLocaleLowerCase();
-        let am: boolean = timelwr.indexOf('am') > -1,
-            pm: boolean = timelwr.indexOf('pm') > -1,
-            result: string = timelwr.replace(/(am|pm)/, '');
+        lat timeLwr = time.toLocaleLowerCase();
+        let am: boolean = timeLwr.indexOf('am') > -1,
+            pm: boolean = timeLwr.indexOf('pm') > -1,
+            result: string = timeLwr.replace(/(am|pm)/, '');
 
         if (!am && pm) {
             let spltd = result.split(':');
